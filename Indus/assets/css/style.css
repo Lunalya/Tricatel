@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Lemonada:wght@300&family=Montserrat&family=Philosopher:ital@1&family=Raleway:wght@200;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Raleway:wght@200;400&display=swap');
+
+@font-face {
+    font-family: "novablack";
+    src: url("../fonts/nova_black.otf") format("otf");   
+   }
+
+@font-face {
+    font-family: "novalight";
+    src: url("../fonts/ProximaNova-Light.otf") format("otf");   
+   }
+
+
+body{
+    margin: 0px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+.logo{
+    display: flex;
+    color: white;
+    font-size: 26px;
+    align-items: center;
+}
+
+.logo img{
+    margin-right: 20px;
+}
+
+.logo_nav{
+    display: flex;
+    flex-direction: row;
+    margin-left: 30px;
+    margin-right: 80px;
+
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    font-size: 26px;
+  }
+
+  nav ul {
+    list-style: none;
+    text-align: right;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 600px;
+  }
+  nav ul li {
+    display: flex;
+    flex-direction: row;
+  }
+
+
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 0.10em;
+    display: inline-block;
+    padding: 15px 20px;
+    position: relative;
+  }
+
+  nav a:after {    
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: #ffffff;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+  }
+  nav a:hover:after { 
+    width: 100%; 
+    left: 0; 
+  }
+  @media screen and (max-height: 300px) {
+     nav ul {
+          margin-top: 40px;
+      }
+  }
+  
+
+.first-section{
+
+    background-image: url("../img/fond1.jpg");
+    height: 970px;
+    padding-top: 20px;
+}
+
+.slogan{
+    color: white;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 13%;
+    
+}
+
+.slogan h1{
+    font-family: 'Lemonada', cursive;
+}
+
+
+
+.dec_nos_recettes{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.dec_nos_recettes a{
+    background-color: rgba(255, 255, 255, 0.171);
+    color: white;
+    text-decoration: none;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    padding: 15px 35px;
+    border: white 1px solid;
+    
+}
+
+.sect_recettes{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 70px;;
+}
+
+.titre_recette{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 50px;  
+}
+
+.titre_recette h2{
+    font-size: 32px;
+    padding: 0px 10px 15px 10px;
+}
+
+#type_plat{
+    margin:  0px 30px 0px 30px;
+    border: none;
+    font-size: 18px;
+    color: gray;
+}
+
+.form_index{
+    display: flex;
+    flex-direction: row;
+}
+
+.lign_card{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 120px;
+    margin-bottom: 180px;
+}
+
+.card_dish{
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: rgb(160, 160, 160) 5px 5px 15px;
+}
+
+.card_dish img {
+    width: 100%;
+    height: 350px;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.categorie_card{
+    color: gray;
+}
+
+.dish_text{
+    margin: 30px;
+    text-align: justify;
+    font-family: 'novalight', sans-serif ;
+}
+
+.Mybtn{
+    display: flex;
+   
+}
+
+
+.Mybtn a{
+    text-decoration: none;
+    color: white;
+    background-color: #CA532D;
+    padding: 10px 20px 10px 20px;
+}
+
+.citation{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 36px;
+    margin: 250px;
+    font-family: 'Lemonada', cursive;
+}
+
+.source{
+    display: flex;
+    align-self: flex-end;
+    margin-right: 250px;
+    font-size: 24px;
+}
+
+
+footer{
+    background: #b1b1b1a1;
+}
+
+.foot1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.partenaires{
+    font-size: 22px;
+}
+
+.partenaires h5{
+    font-size: 25px;
+}
+
+.mention{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    font-size: 25px;
+    background-color: rgb(156, 156, 156);
+}
