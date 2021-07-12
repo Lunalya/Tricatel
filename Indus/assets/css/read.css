@@ -1,0 +1,9 @@
+body{
+    background: url(../img/fond/sausage.png);
+    background-size: cover;
+}
+
+.container{
+    margin-top: 50px;
+    color: white;
+}

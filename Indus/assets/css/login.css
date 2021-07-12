@@ -1,5 +1,5 @@
 body{
-    background: url(../img/fond_dish.jpg);
+    background: url(../img/fond/fond_dish.jpg);
 }
 #container{
     width:400px;
@@ -10,9 +10,8 @@ body{
 form {
     width:100%;
     padding: 30px;
-    border: 1px solid #f1f1f1;
     border-radius: 5px;
-    background: rgba(255, 255, 255, 0.795);
+    background: rgba(116, 116, 116, 0.795);
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 #container h1{
