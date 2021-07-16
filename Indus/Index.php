@@ -24,13 +24,11 @@ $request = $bdd->query($sql);
     
     <div class="logo_nav">
         <div class="logo">
-            <img src="assets/img/logo/logo1.png" width="100px"> <p>Tricatel</p>
+            <img src="assets/img/logo/logo1.png" width="100px"> <p class='Nom'>Tricatel</p>
         </div>
-    <nav>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Recettes</a></li>
-            <li><a href="login.php">Connexion</a></li>
+    <nav class="nav1">
+        <ul class= "ul1">
+            <li class="li1"><a class="a1" href="login.php">Connexion</a></li>
         </ul>
     
     </nav>
@@ -59,50 +57,57 @@ $request = $bdd->query($sql);
             <h2 id="titre_recette">Nos recettes</h2>
             <img src="assets/img/icones/rectangle.png" height="10px" width="20px">
         </div>
+    </div>
 
-        <form class="form_index" method="POST">
-         <div>
-            
-            <select name="type_plat" id="type_plat">
-                <option value="">Types de plats</option>
-                <option value="entrée">Entrée</option>
-                <option value="plat">Plat</option>
-                <option value="dessert">Dessert</option>
-            </select>
-        </div>
+      <nav class="nav2">
 
-        <div>
-            
-            <select name="type_plat" id="type_plat">
-                <option value="">Régime alimentaire</option>
-                <option value="végé">Végétarien</option>
-                <option value="vegan">Vegan</option>
-                <option value="omni">Aucun</option>
-            </select>
-        </div>
+      
+  <ul class="ul2bis">
+    <li class="deroulant li2"><a class="a2" href="#non">Types de plats &ensp;</a>
+      <ul class="sous ">
+        <li class="li2"><a  class="a2 btn active" onclick="filterSelection('all')"  href="#recet">All</a></li>
+        <li class="li2"><a  class="a2 btn" onclick="filterSelection('Entrée')" href="#recet">Entrée</a></li>
+        <li class="li2"><a  class="a2 btn" onclick="filterSelection('Plat')" href="#recet">Plat</a></li>
+        <li class="li2"><a  class="a2 btn" onclick="filterSelection('Dessert')" href="#recet">Dessert</a></li>
+      </ul>
+    </li>
+  </ul>
+    <ul class="ul2bis">
+    <li class="deroulant li2"><a class="a2" href="#non">Régimes alimentaires &ensp;</a>
+      <ul class="sous ">
+        <li class="li2"><a  class="a2 btn active" onclick="filterSelection('all')"  href="#recet">All </a></li>
+        <li class="li2"><a class="a2 btn" onclick="filterSelection('Végan')" href="#recet">Végan</a></li>
+        <li class="li2"><a class="a2 btn" onclick="filterSelection('Végétarien')" href="#recet">Végétarien</a></li>
+        <li class="li2"><a class="a2 btn" onclick="filterSelection('Aucun')" href="#recet">Aucun</a></li>
+      </ul>
+    </li>
+    </ul>
 
-        <div>
-            
-            <select name="type_plat" id="type_plat">
-                <option value="">Pays d'origines</option>
-                <option value="france">France</option>
-                <option value="corée">Corée du sud</option>
-                <option value="inde">Inde</option>
-            </select>
-        </div>
-        </form>
-     </div>
+    <ul class="ul2bis">
+    <li class="deroulant li2"><a  class="a2"  href="#non">Pays d'origine &ensp;</a>
+      <ul class="sous">
+        <li class="li2"><a  class="a2 btn active" onclick="filterSelection('all')"  href="#recet">All </a></li>
+        <li class="li2"><a class="a2 btn" onclick="filterSelection('Indien')" href="#recet">Indien</a></li>
+        <li class="li2"><a class="a2 btn" onclick="filterSelection('Coréen')" href="#recet">Coréen</a></li>
+        <li class="li2"><a class="a2 btn" onclick="filterSelection('Français')" href="#recet">Français</a></li>
+      </ul>
+    </li>
+  </ul>
+      </nav>
+    </div>
+
+    
 
     <!-- fin du tries -->
 
-    <div class="all_card">
+    <div class="all_card container">
 
     <?php
 while ($row = $request->fetch())
 {
     ?>
 
-                <div class="card_dish">
+                <div id="recette" class="card_dish filterDiv <?= $row["type_plat"]; ?> <?=  $row["pays"] ?> <?=  $row["regime"] ?>">
                     <img src="<?= $row["photo"] ?>" >
                     <h3><?=  $row["nom_plat"] ?></h3>
                         <div class="categorie_card"> 
@@ -150,6 +155,46 @@ while ($row = $request->fetch())
         <h6>Mention legales</h6>
     </div>
 </footer>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
 
+filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("filterDiv");
+  if (c == "all") c = "";
+  // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+// Show filtered elements
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {
+      element.className += " " + arr2[i];
+    }
+  }
+}
+
+// Hide elements that are not selected
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);
+    }
+  }
+  element.className = arr1.join(" ");
+}
+ 
+</script>
 </body>
 </html>

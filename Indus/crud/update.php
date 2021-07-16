@@ -84,27 +84,27 @@ else {
                 ?>
                 <form method="post">
                     <div class="form-group">
-                        <label for="title">Nom : </label>
+                        <label for="title">  <img src="../assets/img/icones/fork.png"> Nom : </label>
                         <input type="text" id="nom_plat" name="nom_plat" class="form-control" value=" <?= $result['nom_plat'] ?>">
                     </div>
                     <div class="form-group">
-                        <label for="chemin_photo">Chemin de la photo : </label>
+                        <label for="chemin_photo">  <img src="../assets/img/icones/photo.png"> Chemin de la photo : </label>
                         <input type="text" id="photo" name="photo" class="form-control" value=" <?= $result['photo'] ?>">
                     </div>
                     <div class="form-group">
-                    <label for="type_plat">Type de plat : </label>
+                    <label for="type_plat">  <img src="../assets/img/icones/assiette.png"> Type de plat : </label>
                         <input type="text" id="type_plat" name="type_plat" class="form-control" value=" <?= $result['type_plat'] ?>">
                     </div>
                     <div class="form-group">
-                        <label for="regime">Régime Alimentaire : </label>
+                        <label for="regime">  <img src="../assets/img/icones/brocoli.png"> Régime Alimentaire : </label>
                         <input type="text" id="regime" name="regime" class="form-control" value=" <?= $result['regime'] ?>">
                     </div>
                     <div class="form-group">
-                        <label for="origine">Pays d'origine : </label>
+                        <label for="origine">  <img src="../assets/img/icones/world.png"> Pays d'origine : </label>
                         <input type="text" id="pays" name="pays" class="form-control" value=" <?= $result['pays'] ?>">
                     </div>
                     <div class="form-group">
-                        <label for="descrip">Description : </label>
+                        <label for="descrip">  <img src="../assets/img/icones/copy.png"> Description : </label>
                         <textarea type="textarea" id="descrip" name="descrip" class="form-control" value="text"><?= $result['descrip'] ?></textarea
                     </div>
                     <input type="hidden" value=" <?= $result['id'] ?>" name="id">

@@ -7,6 +7,30 @@ body{
     color: white;
 }
 
+h1{
+    margin-bottom:  50px;
+}
+
 button, a{
     margin-top: 30px;
+}
+
+label{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+label img{
+    margin-right: 10px;
+}
+
+
+@media (max-width: 767px) {
+
+    .container{
+        margin-left: 70px;
+
+    }
+
 }

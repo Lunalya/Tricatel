@@ -45,3 +45,13 @@ input[type=submit]:hover {
     color: #6e431f;
     border: 1px solid #6e431f;
 }
+
+@media (max-width: 767px) {
+
+    #container{
+        width:350px;
+        margin: 20px;
+    }
+
+}
+

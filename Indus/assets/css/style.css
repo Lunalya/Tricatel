@@ -11,10 +11,14 @@
     src: url("../fonts/ProximaNova-Light.otf") format("otf");   
    }
 
+html{
+    scroll-behavior: smooth;
+   }
 
 body{
     margin: 0px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'novablack', 'Montserrat', sans-serif;
+    
 }
 
 
@@ -37,7 +41,7 @@ body{
 
 }
 
-nav {
+.nav1 {
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -45,22 +49,22 @@ nav {
     font-size: 26px;
   }
 
-  nav ul {
+  .nav1 .ul1 {
     list-style: none;
     text-align: right;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    width: 600px;
+    width: 165px;
   }
-  nav ul li {
+  .nav1 .ul1 .li1 {
     display: flex;
     flex-direction: row;
   }
 
 
-  nav a {
+  .nav1 .a1 {
     color: #fff;
     text-decoration: none;
     letter-spacing: 0.10em;
@@ -69,7 +73,7 @@ nav {
     position: relative;
   }
 
-  nav a:after {    
+  .nav1 .a1:after {    
     background: none repeat scroll 0 0 transparent;
     bottom: 0;
     content: "";
@@ -81,12 +85,12 @@ nav {
     transition: width 0.3s ease 0s, left 0.3s ease 0s;
     width: 0;
   }
-  nav a:hover:after { 
+  .nav1 .a1:hover:after { 
     width: 100%; 
     left: 0; 
   }
   @media screen and (max-height: 300px) {
-     nav ul {
+     .nav1 .ul1 {
           margin-top: 40px;
       }
   }
@@ -169,12 +173,15 @@ nav {
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 120px;
-    margin-bottom: 180px;
+    margin-bottom: 150px;
+    overflow: hidden;
 }
+
 
 .card_dish{
     width: 500px;
-    margin: 50px;
+    margin: 55px;
+    margin-bottom: 230px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -216,7 +223,7 @@ nav {
     flex-direction: column;
     align-items: center;
     font-size: 36px;
-    margin: 250px;
+    margin-bottom: 250px;
     font-family: 'Lemonada', cursive;
 }
 
@@ -229,7 +236,7 @@ nav {
 
 
 footer{
-    background: #b1b1b1a1;
+    background: #d1d1d1a1;
 }
 
 .foot1{
@@ -254,5 +261,141 @@ footer{
     width: 100%;
     height: 50px;
     font-size: 25px;
-    background-color: rgb(156, 156, 156);
+    background-color: rgb(184, 184, 184);
 }
+
+/*trie*/ 
+
+.container {
+    overflow: hidden;
+  }
+  
+  .filterDiv {
+    display: none; /* Hidden by default */
+  }
+  
+  /* The "show" class is added to the filtered elements */
+  .show {
+    display: flex;
+  }
+  
+
+/*Les 3 menus déroulants*/
+
+.ul2bis{
+    display: flex;
+    flex-direction: row;
+
+}
+  
+nav ul{
+    list-style-type: none;
+
+}
+
+nav{
+    display: flex;
+    justify-content: center;
+}
+
+
+.nav2 .a2{
+    display: block;
+    text-decoration: none;
+    color: black;
+    border-bottom: 2px solid transparent;
+    padding: 10px 0px;
+}
+
+.nav2 .a2:hover{
+    color: #CA532D;
+    border-bottom: 2px solid #CA532D;
+}
+
+.sous{
+    display: none;
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+}
+.nav2 > ul .li2:hover .sous{
+    display: flex;
+    flex-flow: column wrap;
+}
+.sous .li2{
+    flex: 1 1 auto;
+    text-align: left;
+}
+.sous .a2{
+    padding: 10px;
+    border-bottom: none;
+}
+.sous .a2:hover{
+    border-bottom: none;
+    background-color: RGBa(200,200,200,0.1);
+}
+.deroulant > .a2::after{
+    content:" ↓";
+    font-size: 25px;
+}
+
+
+
+@media (max-width: 767px) {
+
+    .Nom{
+        display: none;
+    }
+
+    .slogan{
+        margin-top: 50%;
+    }
+
+    .slogan h1{
+        font-size: 28px;
+        text-align: center;
+    }
+
+    .card_dish{
+        margin-bottom: 100px;
+        margin: 20px;
+
+    }
+
+    .card_dish img {
+        height: 300px;
+    }
+
+    .citation{
+        text-align: center;
+        font-size: 28px;
+    }
+
+    .source{
+        margin-right: 35px;
+
+    }
+
+    .foot1 img{
+        width: 200px;
+    }
+
+    .partenaires{
+        font-size: 20px;
+    }
+
+    .partenaires h5{
+        font-size: 22px;
+        margin-right: 15px;
+    }
+
+    .maps{
+        display: none;
+    }
+
+    
+
+
+}
+

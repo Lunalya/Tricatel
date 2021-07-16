@@ -28,9 +28,9 @@ $result = $req->fetchAll(PDO::FETCH_ASSOC);
 
 <body>
     <main class="container">
-        <div class="row">
-            <section class="col-12">
-                <h1>Les recettes enregistrée: </h1>
+       
+            <section>
+                <h1>Les recettes enregistrées: </h1>
                 <?php
                     if(!empty($_SESSION['erreur'])){
                 ?>
@@ -47,47 +47,44 @@ $result = $req->fetchAll(PDO::FETCH_ASSOC);
                 <?php
                     }
                 ?>
-                 <table class="table">
-                    <thead>
-                        <th>Id</th>
-                        <th>Chemin photo</th>
-                        <th>Nom</th>
-                        <th>Types de plats</th>
-                        <th>Régime alimentaire</th>
-                        <th>Pays d'origine</th>
-                        <th>Description</th>
-                        <th>Action</th>
-                    </thead>
-                    <tbody>
                         <?php
                             foreach ($result as $pseudo) {
 
                         ?>
-                            <tr>
-                                <td> <?= $pseudo['id'] ?> </td>
-                                <td> <?= $pseudo['photo'] ?> </td>
-                                <td> <?= ($pseudo['nom_plat']) ?> </td>
-                                <td> <?= ($pseudo['type_plat']) ?> </td>
-                                <td> <?= ($pseudo['regime']) ?> </td>
-                                <td> <?= ($pseudo['pays']) ?> </td>
-                                <td> <?= ($pseudo['descrip']) ?> </td>
-                                <td>
+                    <div class="container">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h3 class="card-title"> <?= $pseudo['id'] ?> - <?=  $pseudo["nom_plat"] ?> </h3>
+                                    <div class="card-text"> 
+                                        <?=  $pseudo["pays"] ?> | <?=  $pseudo["regime"] ?> | <?= $pseudo["type_plat"] ?>
+                                    </div>
+                                    <p class="card-text"> <?=  $pseudo["descrip"] ?> </p>  
+                                    <p> <strong>Chemin de la photo:</strong> <?= $pseudo['photo'] ?></p>  
                                     <a href="read.php?id=<?= $pseudo['id'] ?>" class="btn btn-info">Voir</a>
                                     <a href="update.php?id=<?= $pseudo['id'] ?>" class="btn btn-warning">Modifier</a>
-                                    <a href="delete.php?id=<?= $pseudo['id'] ?>" class="btn btn-danger">Supprimer</a>
-                                </td>
-                            </tr>
+                                    <a href="delete.php?id=<?= $pseudo['id'] ?>" class="btn btn-danger">Supprimer</a>   
+                                    </div> 
+                                </div>
+                    </div>
+                
+
                         <?php       
                             }
                         ?>
-
-                            </tbody>
-                        </table>
-                        <a href="create.php" class="btn btn-primary">Ajouter une recette</a>
-                        <a href="../index.php">Retourner sur le site</a>
+                        <div class="mybtn">
+                            <a href="create.php" class="btn btn-primary">Nouvelle recette</a>
+                            <div class="svg-wrapper">
+                                <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+                                <rect id="shape" height="40" width="150" />
+                                <div id="text">
+                                <a href="../Index.php"><span class="spot"></span>Retour sur le site</a>
+                                </div>
+                                 </svg>
+                            </div>
+                        </div>
 
                     </section>
-                </div>
+                
             </main>
         </body>
         </html>

@@ -43,15 +43,17 @@ else {
         <div class="row">
             <section class="col-12">
                 <h1>Nom : <?=$result['nom_plat'] ?></h1>
-                <p>Type de plat : <?=$result['type_plat'] ?></p>
-                <p> Régime alimentaire : <?=$result['regime'] ?></p>
-                <p>Type de plat : <?=$result['pays'] ?></p>
-                <p>Descriptif : <?=$result['descrip'] ?></p>
+                <p><span class="gras">Type de plat : </span><?=$result['type_plat'] ?></p>
+                <p><span class="gras"> Régime alimentaire :</span> <?=$result['regime'] ?></p>
+                <p><span class="gras">Pays d'origine :</span> <?=$result['pays'] ?></p>
+                <p><span class="gras">Descriptif : </span></br><?=$result['descrip'] ?></p>
 
+
+                <div class="mes_btn">
                     <a href="update.php?id=<?= $result['id'] ?>" class="btn btn-warning">Modifier</a>
                     <a href="delete.php?id=<?= $result['id'] ?>" class="btn btn-danger">Supprimer</a>
                     <a href="index.php" class="btn btn-secondary">Retour à l'accueil</a> 
-                </p>
+                </div>
             </section>
         </div>
     </main>
