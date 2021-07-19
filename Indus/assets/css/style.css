@@ -288,12 +288,12 @@ footer{
 
 }
   
-nav ul{
+.nav2 ul{
     list-style-type: none;
 
 }
 
-nav{
+.nav2{
     display: flex;
     justify-content: center;
 }
@@ -355,6 +355,12 @@ nav{
     .slogan h1{
         font-size: 28px;
         text-align: center;
+    }
+
+    .nav2{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .card_dish{
